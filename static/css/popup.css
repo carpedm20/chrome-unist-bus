@@ -1,0 +1,97 @@
+/* General */
+
+html {
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Nanum Gothic', Arial, sans-serif;
+	overflow: hidden;
+}
+
+#main-container {
+	width: 220px;
+	font-size: 12px;
+}
+
+#main-bus {
+	height: auto;
+}
+
+/* Flat-UI fix */
+
+.dropdown-arrow {
+	margin-top: 12px !important;
+}
+
+/* Bootstrap Fix */
+
+.list-group {
+	margin-bottom: 0px !important;
+}
+
+/* Bus */
+
+.bus-div {
+	overflow: auto;
+	min-height: 20px; 
+}
+
+.bus-header {
+	position: absolute;
+	top: 0px;
+}
+
+.bus-time {
+}
+
+.bus-time-div {
+	position: relative;
+}
+
+.bus-text {
+	display: block;
+	font-size: 13px;
+}
+
+p.bus-text span, {
+	color: #bdc3c7;
+}
+
+.footer {
+	margin-top: 6px;
+	line-height: 13px;
+}
+
+.footer span {
+	font-size: 13px;
+}
+
+.UNIST-bus {
+	margin-right: 7px;
+}
+
+.carpedm20 {
+	font-size: 4px;
+	margin-bottom: 0px;
+	color: #bdc3c7;
+	margin-right: 13px;
+}
+
+.bus-text-label {
+	display: block;
+	position: absolute;
+	top: 4px;
+	font-size: 13px;
+	line-height: 13px;
+	color: #c0c1c2;
+	font-weight: 400;
+}
+
+.bus-table {
+	margin-bottom: 10px;
+}
+
+.bus-table .btn {
+	padding: 5px 10px !important;
+}

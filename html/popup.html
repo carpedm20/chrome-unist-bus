@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html>
+  <head>
+    <!--
+    start : 2014-06-10 13:23 pm
+                                   _           ____   ___
+      ___ __ _ _ __ _ __   ___  __| |_ __ ___ |___ \ / _ \
+     / __/ _` | '__| '_ \ / _ \/ _` | '_ ` _ \  __) | | | |
+    | (__ (_| | |  | |_) |  __/ (_| | | | | | |/ __/| |_| |
+     \___\__,_|_|  | .__/ \___|\__,_|_| |_| |_|_____|\___/
+                   |_|
+
+    end  : 2014-??-??
+    -->
+    <!-- Loading Bootstrap -->
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <!-- Loading Flat UI -->
+    <link href="/static/css/flat-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" type="text/css" />
+    <link href="/static/css/popup.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="/static/js/html5shiv.js"></script>
+      <script src="/static/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-app="bus_app" ng-controller="MainCtrl">
+    Hello, {{ message }}
+    <div class="footer text-right">
+      <span class="UNIST-bus">
+        <strong>UNIST 버스 언제와?</strong>
+      </span>
+      <p class="carpedm20"> 
+        <small>by carpedm20</small>
+      </p>
+    </div>
+    <script src="/static/js/jquery-1.8.3.min.js"></script>
+    <script src="/static/js/angular.min.js"></script>
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/bootstrap-select.js"></script>
+    <script src="/static/js/script.js"></script>
+    <!-- REQUIREJS -->
+    <script data-main="/static/js/popup_main" src="/static/js/require.js"></script>
+  </body>
+</html>
