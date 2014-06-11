@@ -11,9 +11,10 @@
     "webRequest",
     "notifications",
     "webRequestBlocking",
-    "clipboardWrite"
+    "clipboardWrite",
+    "http://apis.its.ulsan.kr:8088/*"
   ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval' https://s.ytimg.com/yts/jsbin/ https://www.youtube.com/ https://www.google-analytics.com/ http://localhost; object-src 'self'",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' http://localhost; object-src 'self'",
   "default_locale": "en",
   "description": "__MSG_extDescription__",
   "icons": {
