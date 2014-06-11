@@ -13,7 +13,18 @@ busApp.config(function($routeProvider) {
 });
 
 busApp.controller('busController', function($scope, $http) {
-  $scope.model = { selectedIndex: 0 };
+  $scope.model = { selectedIndex: 0,
+                   includeFromDirection: true,
+                   includeToDirection: true };
+  $scope.refreshBusSTop = function (option) {
+  	if (option === 0) {
+  		$scope.model.includeFromDirection = !$scope.model.includeFromDirection;
+  	}
+  	else if (option === 1)
+  		$scope.model.includeToDirection = !$scope.model.includeToDirection;
+
+  	$scope.selectBusStop($scope.model.selectedIndex);
+  }
 
   $scope.selectBusStop = function (index) {
     $scope.model.selectedIndex = index;
@@ -53,6 +64,19 @@ busApp.controller('busController', function($scope, $http) {
   $http.get('/buses/buses.json').success(function(data) {
     $scope.buses = data;
   });
+
+  $scope.directionFilter = function(buses) {
+  	var result = {};
+
+    angular.forEach(buses, function(data, no) {
+        if ($scope.buses[no]["direction"] === 1 && $scope.model.includeFromDirection) {
+            result[no] = data;
+        } else if ($scope.buses[no]["direction"] === 0 && $scope.model.includeToDirection) {
+        	result[no] = data;
+        }
+    });
+    return result;
+  };
 });
 
 busApp.directive('busMenu', function() {

@@ -1,9 +1,33 @@
 
 <bus-menu></bus-menu>
 
+<div class="text-center">
+  <label class="checkbox school-from-box" ng-click="refreshBusSTop(0)" for="fromSchool">
+    <span class="icons">
+      <span class="first-icon fui-checkbox-unchecked">
+      </span>
+      <span class="second-icon fui-checkbox-checked">
+      </span>
+    </span>
+    <input type="checkbox" value="" id="fromSchool" data-toggle="checkbox">
+    <small>학교 쪽 숨기기</small>
+  </label>
+
+  <label class="checkbox school-to-box" ng-click="refreshBusSTop(1)" for="toSchool">
+    <span class="icons">
+      <span class="first-icon fui-checkbox-unchecked">
+      </span>
+      <span class="second-icon fui-checkbox-checked">
+      </span>
+    </span>
+    <input type="checkbox" value="" id="toSchool" data-toggle="checkbox">
+    <small>학교 출발 숨기기</small>
+  </label>
+</div>
+
 <div id="main-bus">
   <ul class="list-group">
-    <li class="list-group-item" ng-repeat="(no, data) in busStops[model.selectedIndex]['buses']">
+    <li class="list-group-item" ng-repeat="(no, data) in directionFilter(busStops[model.selectedIndex]['buses'])">
       <div class="bus-div">
         <div class="bus-header">
           <h5>
