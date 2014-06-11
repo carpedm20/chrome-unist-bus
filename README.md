@@ -10,6 +10,7 @@ This is a chrome extension of UNIST Bus.
 
 This will automatically show the remain time of buses for UNIST students.
 
+Chrome web store : [download](https://chrome.google.com/webstore/detail/unist-bus-when/bjlijmbdlcjimbaehpppflcgmdgjlgme)
 
 ## Used libraries ##
 
