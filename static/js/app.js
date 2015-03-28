@@ -3,6 +3,21 @@
 var busApp = angular.module('busApp', ['ngRoute']);
 var x2js = new X2JS();
 
+var defaultStopId = 0;
+chrome.storage.sync.get('stopId', function(result) {
+  defaultStopId = result.stopId;
+});
+
+function saveBusStop(stopId) {
+  chrome.storage.sync.set({'stopId': stopId}, function() {
+    //message('Settings saved');
+  });
+}
+
+function newTab(link) {
+  chrome.tabs.create({'url': link});
+}
+
 busApp.config(function($routeProvider) {
   $routeProvider
     // route for the home page
@@ -13,12 +28,27 @@ busApp.config(function($routeProvider) {
 });
 
 busApp.controller('busController', function($scope, $http) {
-  $scope.model = { selectedIndex: 0,
+  $scope.model = { selectedIndex: defaultStopId,
                    includeFromDirection: true,
                    includeToDirection: true };
 
   $scope.showBusRoute = function (link) {
     chrome.tabs.create({'url': link});
+  }
+
+  $scope.notifyBusArrival = function (busId) {
+    var details = {
+      type:    "basic",
+      iconUrl: "/static/img/icon128_active.png",
+      title:   busId,
+      message: "우왕 온닫!"
+    };
+
+    chrome.notifications.create(busId, details, function(notifId) {
+      setTimeout(function() {
+        destroyNotification(notifId);
+      }, 8000);
+    });
   }
 
   $scope.refreshBusSTop = function (option) {
@@ -32,6 +62,8 @@ busApp.controller('busController', function($scope, $http) {
   }
 
   $scope.selectBusStop = function (index) {
+    saveBusStop(index);
+
     $scope.model.selectedIndex = index;
 
     for (var i in $scope.busStops[index]["stopid"]) {

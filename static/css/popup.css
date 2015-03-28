@@ -1,7 +1,7 @@
 /* General */
 
 html {
-	overflow-y: hidden;
+	/*overflow-y: hidden;*/
 }
 
 body {
@@ -10,7 +10,7 @@ body {
 }
 
 #main-container {
-	width: 220px;
+	width: 270px;
 	font-size: 12px;
 }
 
@@ -19,6 +19,13 @@ body {
 }
 
 /* Flat-UI fix */
+.icons {
+  top: -1px !important;
+}
+.icons span {
+  top: -1px !important;
+}
+
 .select {
 	margin-bottom: 0px !important;
 }
@@ -111,6 +118,12 @@ p.bus-text span, {
 	margin-bottom: 0px;
 	color: #bdc3c7;
 	margin-right: 13px;
+}
+
+.help {
+  size: 20px;
+  margin-top: 5px;
+  margin-bottom: 3px;
 }
 
 .help:hover {

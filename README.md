@@ -15,6 +15,13 @@ Chrome web store : [download](https://chrome.google.com/webstore/detail/unist-bu
 
 ## Update history ##
 
+[ v.0.7.0 업데이트 정보 ]
+
+- 가장 마지막에 봤던 정류장 기억하기
+- 버스 도착 10분전 알리 추가
+- "천상청구제네스아파트" 추가
+- UNIST, 천상청구제네스아파트에 304 버스 추가
+
 [ v.0.6.0 업데이트 정보 ]
 
 * 버스 번호 클릭시 "노선 보기" 추가
