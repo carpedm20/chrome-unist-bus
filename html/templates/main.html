@@ -10,7 +10,7 @@
       </span>
     </span>
     <input type="checkbox" value="" id="fromSchool" data-toggle="checkbox">
-    <small>학교 쪽 숨기기</small>
+    <small>언양 쪽만 보기</small>
   </label>
 
   <label class="checkbox school-to-box" ng-click="refreshBusSTop(1)" for="toSchool">
@@ -21,7 +21,7 @@
       </span>
     </span>
     <input type="checkbox" value="" id="toSchool" data-toggle="checkbox">
-    <small>학교 출발 숨기기</small>
+    <small>태화강 쪽만 보기</small>
   </label>
 </div>
 
@@ -30,7 +30,7 @@
     <li class="list-group-item" ng-repeat="(no, data) in directionFilter(busStops[model.selectedIndex]['buses'])">
       <div class="bus-div">
         <div class="bus-header">
-          <h5>
+          <h5 class="help" title="클릭해서 노선 보기" ng-click="showBusRoute(buses[no]['naver'])">
             {{ buses[no]['name'] }}
           </h5>
         </div>

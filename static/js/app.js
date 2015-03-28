@@ -16,6 +16,11 @@ busApp.controller('busController', function($scope, $http) {
   $scope.model = { selectedIndex: 0,
                    includeFromDirection: true,
                    includeToDirection: true };
+
+  $scope.showBusRoute = function (link) {
+    chrome.tabs.create({'url': link});
+  }
+
   $scope.refreshBusSTop = function (option) {
   	if (option === 0) {
   		$scope.model.includeFromDirection = !$scope.model.includeFromDirection;
@@ -41,7 +46,14 @@ busApp.controller('busController', function($scope, $http) {
           var currentBus = $scope.busStops[index]['buses'][currentData.ROUTEID];
 
           if (currentBus) {
-            currentBus["remainTime"] = ((currentData.REMAINTIME/60) | 0) + "분 후 도착";
+            if (currentData.STOPID == 0) {
+              var time = currentData.REMAINTIME;
+              currentBus["remainTime"] = time.substr(0,2) + "시 " + time.substr(2,2) + "분 출발";
+            } else if (currentData.BUSNO == 0) {
+              currentBus["remainTime"] = "운행 종료";
+            } else {
+              currentBus["remainTime"] = ((currentData.REMAINTIME/60) | 0) + "분 후 도착";
+            }
             currentBus["fStopName"] = currentData.FSTOPNAME;
             currentBus["tStopName"] = currentData.TSTOPNAME;
 
@@ -59,6 +71,8 @@ busApp.controller('busController', function($scope, $http) {
   $http.get('/buses/bus_stops.json').success(function(data) {
     $scope.busStops = data;
     $scope.selectBusStop($scope.model.selectedIndex);
+
+    $('.help').twipsy({delayIn:1500,offset:1});
   });
 
   $http.get('/buses/buses.json').success(function(data) {

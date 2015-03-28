@@ -12,10 +12,22 @@ This will automatically show the remain time of buses for UNIST students.
 
 Chrome web store : [download](https://chrome.google.com/webstore/detail/unist-bus-when/bjlijmbdlcjimbaehpppflcgmdgjlgme)
 
+
+## Update history ##
+
+[ v.0.6.0 업데이트 정보 ]
+
+* 버스 번호 클릭시 "노선 보기" 추가
+- 기점 출발 & 운행 종료 추가
+- UNIST, KTX 울산역, 범서 삼거리에 버스 추가
+- "학교 쪽" 을 "언양 쪽", "태화강 쪽"으로 변경
+
+
 ## Used libraries ##
 
 - [jQuery](http://jquery.com/)
 - [Bootstrap](http://getbootstrap.com/)
+- [Bootstrap-twipsy](http://okonski.org/twipsy-bootstrap/docs/javascript.html#twipsy)
 - [Flat-UI](designmodo.github.io/Flat-UI/)
 - [Angularjs](https://angularjs.org/)
 - [xml2json](https://code.google.com/p/x2js/)

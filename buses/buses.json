@@ -1,42 +1,62 @@
 {
 	"194101331": {
         "name": "133",
-        "direction": 0
+        "direction": 0,
+        "naver": "http://maps.naver.com/?busId=60195&enc=b64"
     },
     "194101332": {
         "name": "133",
-        "direction": 1
+        "direction": 1,
+        "naver": "http://maps.naver.com/?busId=60195&enc=b64"
     },
     "196102331" : {
         "name":"233",
-        "direction": 0
+        "direction": 0,
+        "naver": "http://maps.naver.com/?busId=60028&enc=b64"
     },
     "196102332": {
         "name": "233",
-        "direction": 1
+        "direction": 1,
+        "naver": "http://maps.naver.com/?busId=60028&enc=b64"
     },
-    "196103372" : {
-        "name":"337",
-        "direction": 0
+    "196103271": {
+        "name": "327",
+        "direction": 0,
+        "naver": "http://maps.naver.com/?busId=60104&enc=b64"
+    },
+    "196103272": {
+        "name": "327",
+        "direction": 1,
+        "naver": "http://maps.naver.com/?busId=60104&enc=b64"
     },
     "196103371" : {
         "name":"337",
-        "direction": 1
+        "direction": 1,
+        "naver": "http://maps.naver.com/?busId=60116&enc=b64"
+    },
+    "196103372" : {
+        "name":"337",
+        "direction": 0,
+        "naver": "http://maps.naver.com/?busId=60116&enc=b64"
     },
     "196107331" : {
         "name":"733",
-        "direction": 0
+        "direction": 0,
+        "naver": "http://maps.naver.com/?busId=60032&enc=b64"
     },
     "196107332" : {
         "name":"733",
-        "direction": 1
+        "direction": 1,
+        "naver": "http://maps.naver.com/?busId=60032&enc=b64"
     },
     "196108071": {
         "name":"807",
-        "direction": 0
+        "direction": 0,
+        "naver": "http://maps.naver.com/?busId=60106&enc=b64"
     },
     "196108072": {
         "name": "807",
-        "direction": 1
+        "direction": 1,
+        "naver": "http://maps.naver.com/?busId=60106&enc=b64"
     }
 }
