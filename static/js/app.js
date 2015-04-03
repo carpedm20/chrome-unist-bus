@@ -37,6 +37,8 @@ busApp.controller('busController', function($scope, $http) {
   }
 
   $scope.notifyBusArrival = function (busId) {
+    busId *= 1;
+    
     var details = {
       type:    "basic",
       iconUrl: "/static/img/icon128_active.png",
@@ -51,7 +53,7 @@ busApp.controller('busController', function($scope, $http) {
     });
   }
 
-  $scope.refreshBusSTop = function (option) {
+  $scope.refreshBusStop = function (option) {
   	if (option === 0) {
   		$scope.model.includeFromDirection = !$scope.model.includeFromDirection;
   	}

@@ -21,12 +21,12 @@
     },
     "196103041": {
         "name": "304",
-        "direction": 0,
+        "direction": 1,
         "naver": "http://maps.naver.com/?busId=60104&enc=b64"
     },
     "196103042": {
         "name": "304",
-        "direction": 1,
+        "direction": 0,
         "naver": "http://maps.naver.com/?busId=60104&enc=b64"
     },
     "196103271": {

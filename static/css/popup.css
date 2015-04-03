@@ -10,7 +10,7 @@ body {
 }
 
 #main-container {
-	width: 270px;
+	width: 230px;
 	font-size: 12px;
 }
 
@@ -121,9 +121,9 @@ p.bus-text span, {
 }
 
 .help {
-  size: 20px;
+  /*size: 20px;
   margin-top: 5px;
-  margin-bottom: 3px;
+  margin-bottom: 3px;*/
 }
 
 .help:hover {

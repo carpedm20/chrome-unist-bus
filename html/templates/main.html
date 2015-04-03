@@ -2,7 +2,7 @@
 <bus-menu></bus-menu>
 
 <div class="text-center">
-  <label class="checkbox school-from-box" ng-click="refreshBusSTop(0)" for="fromSchool">
+  <label class="checkbox school-from-box" ng-click="refreshBusStop(0)" for="fromSchool">
     <span class="icons">
       <span class="first-icon fui-checkbox-unchecked">
       </span>
@@ -13,7 +13,7 @@
     <small>언양 쪽만 보기</small>
   </label>
 
-  <label class="checkbox school-to-box" ng-click="refreshBusSTop(1)" for="toSchool">
+  <label class="checkbox school-to-box" ng-click="refreshBusStop(1)" for="toSchool">
     <span class="icons">
       <span class="first-icon fui-checkbox-unchecked">
       </span>
@@ -33,7 +33,7 @@
           <h5 class="help" title="클릭해서 노선 보기" ng-click="showBusRoute(buses[no]['naver'])">
             {{ buses[no]['name'] }}
           </h5>
-          <label class="checkbox school-from-box" ng-click="" for="fromSchool">
+          <!--<label class="checkbox school-from-box" ng-click="notifyBusArrival(buses[no]['name'])" ng-click="" for="fromSchool">
             <span class="icons">
               <span class="first-icon fui-checkbox-unchecked">
               </span>
@@ -42,7 +42,7 @@
             </span>
             <input type="checkbox" value="" id="fromSchool" data-toggle="checkbox">
             <small>10분전 알림</small>
-          </label>
+          </label>!-->
         </div>
         <div class="bus-time pull-right">
           <div class="bus-time-div">
