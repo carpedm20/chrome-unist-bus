@@ -101,13 +101,13 @@ busApp.controller('busController', function($scope, $http) {
 
             var i = response.config.url.slice(-1);
             var nextUrl = 'http://apis.its.ulsan.kr:8088/m/002/001/arrInfo.do?brtNo='+$scope.buses[currentData.ROUTEID]['name']+'&brtDirection=1&brtClass=0&bnodeOldid='+$scope.busStops[index]["oldstopid"][i]+'&ROUTEID='+currentData.ROUTEID;
-            console.log(nextUrl);
+            
             $http.get(nextUrl).then(function(response) {
               var id = response.config.url.match(/ROUTEID=([^&]+)/)[1];
 
               var currentBus = $scope.busStops[index]['buses'][id];
               var leftTime = $($(response.data).find('.strong')[1]).text();
-              console.log(leftTime)
+              
               if (leftTime == "") {
                 var tmp = $($(response.data).find(".col.bu").slice(-1)).text();
                 if (tmp == "기점출발시간")
