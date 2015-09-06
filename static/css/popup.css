@@ -120,6 +120,10 @@ p.bus-text span, {
 	margin-right: 13px;
 }
 
+.list-group-item {
+    padding: 10px 10px !important;
+}
+
 .help {
   /*size: 20px;
   margin-top: 5px;

@@ -69,8 +69,8 @@ busApp.controller('busController', function($scope, $http) {
     $scope.model.selectedIndex = index;
 
     for (var i in $scope.busStops[index]["stopid"]) {
-      var url = "http://apis.its.ulsan.kr:8088/Service4.svc/AllBusArrivalInfo.xo?stopid=" + $scope.busStops[index]["stopid"][i];
-
+      var url = "http://apis.its.ulsan.kr:8088/Service4.svc/AllBusArrivalInfo.xo?stopid=" + $scope.busStops[index]["stopid"][i]+'&i='+i;
+      // http://apis.its.ulsan.kr:8088/m/002/001/arrInfo.do?brtNo=133&brtDirection=1&brtClass=0&bnodeOldid=15441
       $http.get(url).then(function(response) {
         var xml = x2js.xml_str2json(response.data);
         var busInfo = xml.RouteArrivalInfoResponse.AllBusArrivalInfoResult.AllBusArrivalInfo.MsgBody.BUSINFO.CurrentAllBusArrivalInfo.AllBusArrivalInfoTable;
@@ -96,6 +96,30 @@ busApp.controller('busController', function($scope, $http) {
             } else {
             	//currentBus["tStopName"] += "외출";
             }
+
+            currentBus["nextRemainTime"] = "...";
+
+            var i = response.config.url.slice(-1);
+            var nextUrl = 'http://apis.its.ulsan.kr:8088/m/002/001/arrInfo.do?brtNo='+$scope.buses[currentData.ROUTEID]['name']+'&brtDirection=1&brtClass=0&bnodeOldid='+$scope.busStops[index]["oldstopid"][i]+'&ROUTEID='+currentData.ROUTEID;
+            console.log(nextUrl);
+            $http.get(nextUrl).then(function(response) {
+              var id = response.config.url.match(/ROUTEID=([^&]+)/)[1];
+
+              var currentBus = $scope.busStops[index]['buses'][id];
+              var leftTime = $($(response.data).find('.strong')[1]).text();
+              console.log(leftTime)
+              if (leftTime == "") {
+                var tmp = $($(response.data).find(".col.bu").slice(-1)).text();
+                if (tmp == "기점출발시간")
+                  tmp = "기점 출발 시간"
+                if (tmp == "통과위치")
+                  currentBus["nextRemainTime"] = "정보 없음"
+                else
+                  currentBus["nextRemainTime"] = leftTime + tmp + " " + $($(response.data).find("dd").slice(-1)).text();
+              } else {
+                currentBus["nextRemainTime"] = leftTime + " 후 도착";
+              }
+            });
           }
         }
       });
